@@ -1,13 +1,17 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 export default function Header(){
+    const router = useRouter()
+    const {lang} = router.query
+
     return(
         <header>
             <div className="content">
                 <a id="mobile-menu-link" href="#sitenav">
                     Menu
                 </a>
-                <Link href="/">
+                <Link href={`/${lang}`}>
                     <a id="logo-link">
                         <img src="/compucare-logo.png" alt="" />
                         <div className="site-name">S.S. Compucare</div>

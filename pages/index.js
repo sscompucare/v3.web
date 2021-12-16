@@ -1,23 +1,14 @@
+const axios = require("axios")
 import Head from 'next/head'
-import Layout from '../components/layout'
 
-export default function Home() {
-  return (
-    <Layout>
-      <Head>
-        <title>S.S. Compucare</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+export default function Home(){
+    return (
+        <div>
+            <Head>
+                <meta http-equiv="Refresh" content="0; url='/en'" />
+            </Head>
 
-      Homepage
-
-      <style jsx global>{
-        `
-        *{
-          margin: 0;
-        }
-        `
-      }</style>
-    </Layout>
-  )
+            ...
+        </div>
+    )
 }

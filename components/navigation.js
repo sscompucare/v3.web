@@ -1,54 +1,45 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
-export default function Navigation(){
-    let categories = [
-        {
-            slug: "laptops",
-            label: "Laptops",
-            position: "main"
-        },
-        {
-            slug: "desktops",
-            label: "Desktops",
-            position: "main"
-        },
-        {
-            slug: "tablets",
-            label: "Tablets",
-            position: "main"
-        },
-        {
-            slug: "printers",
-            label: "Printers",
-            position: "main"
-        },
-        {
-            slug: "printers",
-            label: "Printers",
-            position: "secondary"
-        }
-
-    ]
-
-    let mainCategories = categories.filter((category) => category.position === "main")
+export default function Navigation({categories}){
+    const router = useRouter()
+    const {lang} = router.query
 
     return (
         <nav id="sitenav">
-            <ul>
+            <ul className="category-list">
                 {
-                    mainCategories.map((category) => (
-                        <li>
-                            <Link href={`/category/${category.slug}`}>
+                    categories.slice(0,4).map((category) => (
+                        <li key={category.slug}>
+                            <Link href={`${lang}/category/${category.slug}`}>
                                 <a>
-                                {category.label}
+                                {category.name[lang]}
                                 </a>
                             </Link>
                         </li>
                     ))
                 }
-                {/* <li><Link href="#"><a>More &#x25BC;</a></Link></li> */}
-                
+                <li>
+                <a href={`#navmore`}>
+                    More &gt;
+                </a>
+                </li>
             </ul>
+            <div id="navmore">
+                <ul>
+                    {
+                        categories.slice(4).map((category) => (
+                            <li key={category.slug}>
+                                <Link href={`${lang}/category/${category.slug}`}>
+                                    <a>
+                                    {category.name[lang]}
+                                    </a>
+                                </Link>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
 
             <style jsx>{
                 `
@@ -56,7 +47,7 @@ export default function Navigation(){
                     background-color: #091353;
                 }
 
-                nav ul{
+                nav .category-list{
                     list-style: none;
                     padding: 15px;
                     display: flex;
@@ -64,11 +55,11 @@ export default function Navigation(){
                     margin: auto;
                 }
 
-                nav ul li{
+                nav .category-list li{
                     margin: 9px 30px 15px 0;
                 }
 
-                nav ul li a{
+                nav .category-list li a{
                     display: block;
                     text-decoration: none;
                     color: white;
@@ -76,7 +67,7 @@ export default function Navigation(){
                     font-size: 18px;
                 }
 
-                nav ul li a:hover{
+                nav .category-list li a:hover{
                     text-decoration: underline;
                 }
 
@@ -94,9 +85,17 @@ export default function Navigation(){
                         display: block;
                     }
 
-                    nav ul {
+                    nav .category-list {
                         display: block;
                     }
+                }
+
+                #navmore{
+                    display: none;
+                }
+
+                #navmore:target{
+                    display: block;
                 }
                 `
             }</style>
