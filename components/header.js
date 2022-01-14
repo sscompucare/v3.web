@@ -23,6 +23,7 @@ export default function Header(){
                 `
                 header{
                     background-color: #091353;
+                    width: 100%;
                 }
 
                 header .content{

@@ -20,6 +20,10 @@ export default function Layout({children, categories}){
             body{
                 background-color: #EEE;
             }
+
+            main{
+                // padding-top: 150px;
+            }
             `
             }
             </style>   

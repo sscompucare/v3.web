@@ -13,7 +13,7 @@ export default function File({categories, file, strings}) {
         <Head>
             <title>S.S. Compucare</title>
             <link rel="icon" href="/favicon.ico" />
-      </Head>
+        </Head>
         <main>
             <div className="head">
                 <div className="thumbnail" style={{"background": `url(${file.thumbnailUrl})`}}></div>
@@ -76,7 +76,6 @@ export default function File({categories, file, strings}) {
                 background-position: 50%!important;
                 background-repeat: no-repeat!important;
                 background-size: contain!important;
-                cursor: pointer;
                 background-origin: content-box!important;
 
             }

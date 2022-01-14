@@ -7,11 +7,14 @@ export default function Navigation({categories}){
 
     return (
         <nav id="sitenav">
+            <Link href={`/${lang}`} >
+                <a id="close-nav">X</a>
+            </Link>
             <ul className="category-list">
                 {
                     categories.slice(0,4).map((category) => (
                         <li key={category.slug}>
-                            <Link href={`${lang}/category/${category.slug}`}>
+                            <Link href={`/${lang}/category/${category.slug}`}>
                                 <a>
                                 {category.name[lang]}
                                 </a>
@@ -20,8 +23,8 @@ export default function Navigation({categories}){
                     ))
                 }
                 <li>
-                <a href={`#navmore`}>
-                    More &gt;
+                <a href={`/${lang}/categories`}>
+                    More
                 </a>
                 </li>
             </ul>
@@ -45,6 +48,8 @@ export default function Navigation({categories}){
                 `
                 nav{
                     background-color: #091353;
+                    top: 75px;
+                    width: 100%;
                 }
 
                 nav .category-list{
@@ -71,6 +76,10 @@ export default function Navigation({categories}){
                     text-decoration: underline;
                 }
 
+                #close-nav{
+                    display: none;
+                }
+
                 @media(max-width: 600px){
                     #sitenav{
                         position: fixed;
@@ -87,6 +96,13 @@ export default function Navigation({categories}){
 
                     nav .category-list {
                         display: block;
+                    }
+
+                    #close-nav{
+                        display: block;
+                        position: fixed;
+                        top: 6px;
+                        right: 6px;
                     }
                 }
 
