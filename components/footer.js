@@ -1,6 +1,32 @@
 import Link from "next/link";
+import { useRouter } from 'next/router'
 
 export default function Footer(){
+    const router = useRouter()
+    const {lang} = router.query
+
+    let strings = {
+        "languages": {
+            "en": "Languages",
+            "el": "Γλώσσες"
+        },
+        "designeddeveloped": {
+            "en": "Website designed and developed by",
+            "el": "Σχεδιασμός και ανάπτυξη από"
+        },
+        "contact": {
+            "en": "Contact",
+            "el": "Επικοινωνία"
+        },
+        "call": {
+            "en": "Call",
+            "el": "Τηλέφωνο:"
+        },
+        "text": {
+            "en": "Text",
+            "el": "Στείλε μήνυμα:"
+        }
+    }
     return (<footer>
         <div className="content">
             <div className="copyright">
@@ -8,12 +34,12 @@ export default function Footer(){
             </div>
 
             <div className="creator">
-                Website designed and developed by <a href="https://savvas.me">Savvas Stephanides</a>
+                {strings.designeddeveloped[lang]} <a href="https://savvas.me">Savvas Stephanides</a>
             </div>
 
             <div className="links">
                 <section>
-                    <h2>Languages</h2>
+                    <h2>{strings.languages[lang]}</h2>
                     <ul>
                         <li><Link href="/en"><a>English</a></Link></li>
                         <li><Link href="/el"><a>Ελληνικά</a></Link></li>
@@ -21,10 +47,10 @@ export default function Footer(){
                 </section>
 
                 <section>
-                    <h2>Contact</h2>
+                    <h2>{strings.contact[lang]}</h2>
                     <ul>
-                        <li><a href="tel:0035799664102">Call 99664102</a></li>
-                        <li><a href="sms:0035799664102">Text 99664102</a></li>
+                        <li><a href="tel:0035799664102">{strings.call[lang]} 99664102</a></li>
+                        <li><a href="sms:0035799664102">{strings.text[lang]} 99664102</a></li>
                         <li><a href="info@sscompucare.com">E-mail</a></li>
                         <li><a href="https://fb.me/sscompucare">Facebook</a></li>
                         
