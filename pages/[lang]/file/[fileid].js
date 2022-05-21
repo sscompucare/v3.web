@@ -11,7 +11,7 @@ export default function File({categories, file, strings}) {
 
     return <Layout categories={categories}>
         <Head>
-            <title>S.S. Compucare</title>
+            <title>{file.title} - S.S. Compucare</title>
             <link rel="icon" href="/favicon.ico" />
         </Head>
         <main>

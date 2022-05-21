@@ -14,7 +14,7 @@ export default function Category({category, categories, files}) {
     return (
         <Layout categories={categories}>
             <Head>
-                <title>S.S. Compucare</title>
+                <title>{category.name[lang]} - S.S. Compucare</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
