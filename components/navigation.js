@@ -33,7 +33,7 @@ export default function Navigation({categories}){
                     {
                         categories.slice(4).map((category) => (
                             <li key={category.slug}>
-                                <Link href={`${lang}/category/${category.slug}`}>
+                                <Link href={`/${lang}/category/${category.slug}`}>
                                     <a>
                                     {category.name[lang]}
                                     </a>

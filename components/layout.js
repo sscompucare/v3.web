@@ -1,3 +1,4 @@
+import Footer from './footer'
 import Header from './header'
 import Navigation from './navigation'
 
@@ -8,6 +9,7 @@ export default function Layout({children, categories}){
             <Header />
             <Navigation categories={categories}/>
             {children}
+            <Footer />
 
             <style jsx global>{
             `
