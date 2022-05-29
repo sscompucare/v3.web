@@ -5,6 +5,14 @@ export default function Navigation({categories}){
     const router = useRouter()
     const {lang} = router.query
 
+
+    let strings = {
+        "more": {
+            en: "More",
+            el: "Περισσότερα"
+        }
+    }
+
     return (
         <nav id="sitenav">
             <Link href={`/${lang}`} >
@@ -24,7 +32,7 @@ export default function Navigation({categories}){
                 }
                 <li>
                 <a href={`/${lang}/categories`}>
-                    More
+                    {strings.more[lang]}
                 </a>
                 </li>
             </ul>
