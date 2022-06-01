@@ -17,6 +17,9 @@ export default function Header(){
                         <div className="site-name">S.S. Compucare</div>
                     </a>
                 </Link>
+                <form method="get" action={`/${lang}/search`}>
+                    <input name="query" placeholder="Search" id="search-input"/>
+                </form>
             </div>
 
             <style jsx>{
@@ -32,6 +35,7 @@ export default function Header(){
                     margin: auto;
                     display: flex;
                     align-items: center;
+                    justify-content: space-between;
                 }
 
                 #logo-link{
@@ -67,6 +71,11 @@ export default function Header(){
                     #mobile-menu-link{
                         display: none;
                     }
+                }
+
+                #search-input{
+                    padding: 9px;
+                    width: 200px;
                 }
                 
                 `
