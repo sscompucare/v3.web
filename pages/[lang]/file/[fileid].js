@@ -124,7 +124,7 @@ export async function getStaticProps({params}){
     let files = await fileService.getAllFiles()
 
     
-    let file = files.find((file) => file.id === params.fileid)
+    let file = files.find((file) => file._id === params.fileid)
     file.category = categories.find((category) => category.slug === file.category)
 
     let strings = {
@@ -172,7 +172,7 @@ export async function getStaticProps({params}){
             paths.push({
                 params: {
                     lang: language,
-                    fileid: file.id
+                    fileid: file._id
                 }
             })
         })

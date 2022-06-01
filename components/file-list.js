@@ -5,10 +5,9 @@ export default function FileList({files, language}){
     {
       files
         .map((file) => (
-          <li className="single-file" key={file.id}>
-            <Link href={`/${language}/file/${file.id}`}>
+          <li className="single-file" key={file._id}>
+            <Link href={`/${language}/file/${file._id}`}>
               <a>
-                {/* <img src={file.thumbnailUrl} alt=""/> */}
                 <div className="thumbnail" style={{"background": `url(${file.thumbnailUrl})`}}></div>
                 <div className="file-title">{file.title}</div>
               </a>
