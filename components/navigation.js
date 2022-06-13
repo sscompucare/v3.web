@@ -31,9 +31,11 @@ export default function Navigation({categories}){
                     ))
                 }
                 <li>
-                <a href={`/${lang}/categories`}>
+                    <Link href={`/${lang}/categories`}>
+                <a>
                     {strings.more[lang]}
                 </a>
+                </Link>
                 </li>
             </ul>
             <div id="navmore">

@@ -6,7 +6,7 @@ export default function Layout({children, categories}){
 
     return(
         <div id="app">
-            <Header />
+            <Header categories={categories}/>
             <Navigation categories={categories}/>
             {children}
             <Footer />
