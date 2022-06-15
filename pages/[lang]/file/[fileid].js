@@ -34,7 +34,7 @@ export default function File({categories, file, strings}) {
             <iframe
                 className="file-frame" 
                 title={file.title} 
-                src={`https://drive.google.com/file/d/${file.id}/preview?resourcekey=null`}
+                src={`https://savvasstephanides.github.io/bucket/sscompucare-test/${file.filename}`}
                 width="100%"
                 height="600px">
 
