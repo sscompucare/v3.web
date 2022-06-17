@@ -87,7 +87,7 @@ export default function Header({categories}){
                     position: absolute;
                     color: white;
                     display: block;
-                    margin-top: 36px;
+                    margin-top: 30px;
                     margin-left: 12px;
                     
                 }
@@ -95,6 +95,8 @@ export default function Header({categories}){
                 #mobile-menu summary{
                     list-style: none;
                     cursor: pointer;
+                    outline: 1px solid white;
+                    padding: 6px;
                 }
 
                 #mobile-menu > summary::marker, /* Latest Chrome, Edge, Firefox */ 
