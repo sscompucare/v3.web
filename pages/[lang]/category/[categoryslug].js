@@ -31,7 +31,7 @@ export default function Category({category, categories, files}) {
             main{
                 margin: 15px;
                 max-width: 1200px;
-                
+                padding: 9px;
             }
 
             main .head{

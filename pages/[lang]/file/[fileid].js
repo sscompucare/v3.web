@@ -46,7 +46,7 @@ export default function File({categories, file, strings}) {
             main{
                 margin: 15px;
                 max-width: 1200px;
-                
+                padding: 9px;
             }
 
             main .head{

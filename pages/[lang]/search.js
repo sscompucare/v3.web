@@ -48,11 +48,36 @@ export default function Search({categories, files}){
             <main>
                 <h1>Search results for '{query}'</h1>
 
-                <ul>
+                <div style={{
+                    marginTop: "30px",
+                    fontStyle: "italic"
+                }}>{searchResults.length} {searchResults.length === 1 ? "result" : "results"}</div>
+
+                <ul className="search-results">
                     {searchResults.map((result) => (
                         <li>
                             <Link href={`/${lang}/file/${result.id}`}>
-                                <a>{result.title}</a>
+                                <a style={{
+                                    display: "flex",
+                                    alignItems: "center",
+                                    textDecoration: "none",
+                                    color: "black"
+                                }}>
+                                    <div style={{
+                                        background: `url('${result.thumbnailUrl}')`,
+                                        backgroundRepeat: "no-repeat",
+                                        backgroundPosition: "center center",
+                                        backgroundSize: "contain",
+                                        backgroundColor: "white",
+                                        width: "90px",
+                                        height: "90px",
+                                        borderRadius: "100%",
+                                        marginTop: "30px"
+                                    }}/>
+                                    <h2 style={{
+                                        marginLeft: "30px"
+                                    }}>{result.title}</h2>
+                                </a>
                             </Link>
                         </li>
                     ))}
@@ -82,6 +107,10 @@ export default function Search({categories, files}){
                 main{
                     margin: auto;
                 }
+            }
+
+            .search-results{
+                list-style: none;
             }
             `}
             </style>

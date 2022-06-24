@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 export default function FileList({files, language}){
-    return <ul className="file-list" style={{"paddingTop": "30px"}}>
+    return <ul className="file-list">
     {
       files
         .map((file) => (
