@@ -65,7 +65,6 @@ export async function getStaticProps({params}){
     let category = categories.find((category) => category.slug === categorySlug)
 
     let files = await fileService.getFilesByCategory(categorySlug)
-    console.log(files);
 
     return {
         props: {
