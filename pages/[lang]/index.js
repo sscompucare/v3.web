@@ -4,12 +4,20 @@ import { useRouter } from 'next/router'
 import FileList from '../../components/file-list'
 import CategoryService from '../../modules/categories/category-service'
 import FileService from '../../modules/files/file-service'
+import Link from 'next/link'
 
 const config = require("../../config.json")
 
 export default function Home({categories, files}) {
   const router = useRouter()
   const {lang} = router.query
+
+  const strings = {
+    bestOffers: {
+      "en": "The best offers on the best gadgets!",
+      "el": "Οι καλύτερες προσφορές στις καλύτερες συσκευές!"
+    }
+  }
 
   return (
     <Layout categories={categories}>
@@ -19,6 +27,9 @@ export default function Home({categories, files}) {
       </Head>
 
       <main>
+        <section id="hero">
+          <h1>{strings.bestOffers[lang]}</h1>
+        </section>
 
         {
             categories.map((category) => {
@@ -30,7 +41,7 @@ export default function Home({categories, files}) {
                 
                 return categoryFiles.length > 0 && 
                 <div style={{"paddingTop": "30px"}} key={category.slug}>
-                  <h2 className="category-name">{category.name[lang]}</h2>
+                  <h2 className="category-name"><Link href={`/${lang}/category/${category.slug}`}><a>{category.name[lang]}</a></Link></h2>
                   <FileList files={categoryFiles} language={lang}/>
                 </div>
                 
@@ -52,6 +63,21 @@ export default function Home({categories, files}) {
         h2.category-name{
           font-family: sans-serif;
           margin-top: 60px;
+        }
+
+        section#hero{
+          height: 420px;
+          background: url('/gadgets-icon.png');
+          background-size: 420px;
+          background-repeat: no-repeat;
+          background-position: bottom center;
+          background-color: white;
+        }
+
+        section#hero h1{
+          text-align: center;
+          padding: 45px; 15px 0 15px;
+          font-size: 48px;
         }
         `
       }</style>

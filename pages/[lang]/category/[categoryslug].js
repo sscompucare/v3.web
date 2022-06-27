@@ -11,6 +11,13 @@ export default function Category({category, categories, files}) {
     const router = useRouter()
     const {lang} = router.query
 
+    const strings = {
+        "noOffers": {
+            "en": "No offers currently available for",
+            "el": "Δεν υπάρχουν προσφορές για"
+        }
+    }
+
     return (
         <Layout categories={categories}>
             <Head>
@@ -21,6 +28,8 @@ export default function Category({category, categories, files}) {
                 <div className="head">
                     <h1>{category.name[lang]}</h1>
                 </div>
+                
+                {files.length === 0 && <div class="no-offers">{strings.noOffers[lang]} {category.name[lang]}</div>}
 
                 <FileList files={files} language={lang}/>
                 
@@ -45,6 +54,10 @@ export default function Category({category, categories, files}) {
                 main .head{
                     display: flex;
                 }
+            }
+
+            .no-offers{
+                margin-top: 30px;
             }
             `
             }
