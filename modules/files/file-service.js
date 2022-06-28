@@ -10,7 +10,7 @@ export default function FileService() {
     }
 
     async function getAllFiles() {
-        let response = await axios.get("http://api:5000/files", {
+        let response = await axios.get(`${process.env.API_BASE_URL}/files`, {
             headers: {
                 Cookie: `token=${token}`
             }
@@ -20,7 +20,7 @@ export default function FileService() {
     }
 
     async function getFilesByCategory(categorySlug){
-        let response = await axios.get(`http://api:5000/files/category/${categorySlug}`, {
+        let response = await axios.get(`${process.env.API_BASE_URL}/files/category/${categorySlug}`, {
             headers: {
                 Cookie: `token=${token}`
             }
