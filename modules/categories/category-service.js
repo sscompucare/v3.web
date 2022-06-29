@@ -9,15 +9,11 @@ export default function CategoryService() {
     }
 
     async function getAllCategories() {
-        console.log(`Getting categories from API: ${process.env.API_BASE_URL}`)
         let response = await axios.get(`${process.env.API_BASE_URL}/categories`, {
             headers: {
                 Cookie: `token=${token}`
             }
         })
-
-        console.log("Categories:")
-        console.log(response.data)
 
         return response.data
     }
