@@ -17,6 +17,8 @@ export default function Category({category, categories, files}) {
             "el": "Δεν υπάρχουν προσφορές για"
         }
     }
+    
+    console.log(`IN CATEGORIES PAGE: got ${categories.length} categories.`)
 
     return (
         <Layout categories={categories}>
