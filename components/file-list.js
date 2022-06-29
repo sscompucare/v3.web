@@ -1,6 +1,8 @@
 import Link from 'next/link'
 
 export default function FileList({files, language}){
+    console.log("Files in FileList:")
+    console.log(files)
     return <ul className="file-list">
     {
       files

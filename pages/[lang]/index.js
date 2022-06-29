@@ -33,14 +33,11 @@ export default function Home({categories, files}) {
 
         {
             categories.map((category) => {
-              console.log(category)
 
               let categoryFiles = files
                   .sort((a,b) => new Date(b.createdTime) - new Date(a.createdTime))
                   .filter((file) => file.category === category.slug)
                   .slice(0, 3)
-
-              console.log(categoryFiles)
                 
                 return categoryFiles.length > 0 && 
                 <div style={{"paddingTop": "30px"}} key={category.slug}>
