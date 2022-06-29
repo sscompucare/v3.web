@@ -1,13 +1,14 @@
 import Link from 'next/link'
 
 export default function FileList({files, language}){
-    console.log("Files in FileList:")
-    console.log(files)
     return <ul className="file-list">
     {
       files
         .map((file) => (
           <li className="single-file" key={file.id}>
+            {
+              console.log(file)
+            }
             <Link href={`/${language}/file/${file.id}`}>
               <a>
                 <div className="thumbnail" style={{"background": `url(${file.thumbnailUrl})`}}></div>
