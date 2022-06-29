@@ -180,6 +180,6 @@ export async function getStaticProps({params}){
 
     return {
         paths,
-        fallback: true
+        fallback: false
     }
   }

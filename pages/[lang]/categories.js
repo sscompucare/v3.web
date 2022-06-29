@@ -74,6 +74,6 @@ export async function getStaticProps(){
   
     return {
       paths: languages.map((language) => ({params: {lang: language}})),
-      fallback: true,
+      fallback: false,
     }
   }
