@@ -3,8 +3,6 @@ import Header from './header'
 import Navigation from './navigation'
 
 export default function Layout({children, categories}){    
-    console.log("Categories for layout")
-    console.log(categories)
 
     return(
         <div id="app">
