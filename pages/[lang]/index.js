@@ -21,12 +21,6 @@ export default function Home({categories, files}) {
 
   return (
     <Layout categories={categories}>
-      {
-        console.log("Files for home page:")
-      }
-      {
-        console.log(files)
-      }
       <Head>
         <title>S.S. Compucare</title>
         <link rel="icon" href="/favicon.ico" />
@@ -39,11 +33,14 @@ export default function Home({categories, files}) {
 
         {
             categories.map((category) => {
+              console.log(category)
 
               let categoryFiles = files
                   .sort((a,b) => new Date(b.createdTime) - new Date(a.createdTime))
                   .filter((file) => file.category === category.slug)
                   .slice(0, 3)
+
+              console.log(categoryFiles)
                 
                 return categoryFiles.length > 0 && 
                 <div style={{"paddingTop": "30px"}} key={category.slug}>
