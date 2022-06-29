@@ -16,6 +16,9 @@ export default function CategoryService() {
             }
         })
 
+        console.log("Categories:")
+        console.log(response.data)
+
         return response.data
     }
 }
