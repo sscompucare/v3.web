@@ -21,6 +21,12 @@ export default function Home({categories, files}) {
 
   return (
     <Layout categories={categories}>
+      {
+        console.log("Categories for home page:")
+      }
+      {
+        console.log(categories)
+      }
       <Head>
         <title>S.S. Compucare</title>
         <link rel="icon" href="/favicon.ico" />
