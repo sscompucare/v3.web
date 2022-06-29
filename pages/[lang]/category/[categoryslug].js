@@ -17,7 +17,7 @@ export default function Category({category, categories, files}) {
             "el": "Δεν υπάρχουν προσφορές για"
         }
     }
-
+    
     return (
         <Layout categories={categories}>
             <Head>
@@ -110,6 +110,6 @@ export async function getStaticPaths() {
 
     return {
         paths,
-        fallback: true
+        fallback: false
     }
   }

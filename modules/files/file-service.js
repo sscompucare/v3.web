@@ -15,7 +15,7 @@ export default function FileService() {
                 Cookie: `token=${token}`
             }
         })
-
+        
         return response.data
     }
 
@@ -25,7 +25,7 @@ export default function FileService() {
                 Cookie: `token=${token}`
             }
         })
-
+        
         return response.data
     }
 }
