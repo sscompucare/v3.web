@@ -22,10 +22,10 @@ export default function Home({categories, files}) {
   return (
     <Layout categories={categories}>
       {
-        console.log("Categories for home page:")
+        console.log("Files for home page:")
       }
       {
-        console.log(categories)
+        console.log(files)
       }
       <Head>
         <title>S.S. Compucare</title>
