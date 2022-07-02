@@ -19,6 +19,47 @@ export default function Header({categories}){
     return(
         <header>
             <div className="content">
+                <div className="logo">
+                    <Link href={`/${lang}`}>
+                        <a>
+                            <img src="/compucare-logo.png" alt="" />
+                            <div className="site-name">S.S. Compucare</div>
+                        </a>
+                    </Link>
+                </div>
+                <div className="mobile-menu">
+                    <details closed>
+                        <summary>
+                            Devices
+                        </summary>
+                        <ul>
+                            {
+                                categories.map((category) => (
+                                    <li>
+                                        <Link href={`/${lang}/category/${category.slug}`}><a>{category.name[lang]}</a></Link>
+                                    </li>
+                                ))
+                            }
+                            
+                        </ul>
+                    </details>
+                </div>
+                <div className="language-selector">
+                    <details closed>
+                        <summary><img src="/globe.png" alt="Select a language" /></summary>
+                        <ul>
+                            <li>
+                                <Link href="/en"><a>English</a></Link>
+                                
+                            </li>
+                            <li>
+                                <Link href="/el"><a>Ελληνικά</a></Link>
+                            </li>
+                        </ul>
+                    </details>
+                </div>
+            </div>
+            {/* <div className="content">
                 <details id="mobile-menu">
                     <summary>{strings.categories[lang]}</summary>
                     <ul>
@@ -49,120 +90,131 @@ export default function Header({categories}){
                 <form method="get" action={`/${lang}/search`} id="search-form">
                     <input name="query" placeholder="Search" id="search-input"/>
                 </form>
-            </div>
+            </div> */}
 
             <style jsx>{
                 `
                 header{
                     background-color: #091353;
-                    width: 100%;
                 }
 
-                #logo-link{
+                header .content{
+                    max-width: 1200px;
+                    margin: auto;
+                    position: relative;
+                }
+
+                .logo{
+                    padding: 15px;
+                }
+
+                .logo a{
                     display: flex;
                     align-items: center;
                     text-decoration: none;
-                    justify-content: center;
-                    padding-top: 21px;
                 }
 
-                #logo-link img{
-                    height: 45px;
-                }
-
-                #logo-link .site-name{
-                    margin-left: 21px;
+                .logo a .site-name{
                     color: white;
-                    font-family: sans-serif;
-                    font-size: 21px;
-                    font-weight: bold;
-                    display: none;
-                }
-
-                #logo-link:hover img{
-                    filter: drop-shadow(0 0 6px #eee);
-                }
-
-                #mobile-menu{
-                    position: absolute;
-                    color: white;
-                    display: block;
-                    margin-top: 30px;
-                    margin-left: 12px;
                     
+                    font-weight: bold;
+                    margin-left: 15px;
+                    font-size: 24px;
                 }
 
-                #mobile-menu summary{
-                    list-style: none;
-                    cursor: pointer;
-                    outline: 1px solid white;
-                    padding: 6px;
-                }
-
-                #mobile-menu > summary::marker, /* Latest Chrome, Edge, Firefox */ 
-                #mobile-menu > summary::-webkit-details-marker /* Safari */ {
-                    display: none;
-                }
-
-                #mobile-menu summary:hover{
-                    text-decoration: underline;
-                }
-
-                #mobile-menu ul{
-                    list-style: none;
-                    border: 1px solid black;
-                    margin-top: 9px;
-                }
-
-                #mobile-menu ul li a{
-                    display: block;
-                    padding: 21px;
-                    background-color: white;
-                    text-decoration: none;
-                    color: black;
-                    width: 120px;
-                    border-bottom: 1px solid #ccc;
-                }
-
-                #search-form{
-                    margin-top: 15px;
-                }
-
-                #search-input{
-                    padding: 12px;
-                    margin: 6px;
-                    width: calc(100% - 36px);
-                    border: 0;
-                }
-                
                 @media(min-width: 600px){
-                    #mobile-menu{
+                    .logo{
+                        display: flex;
+                    }
+                }
+
+                @media(max-width: 600px){
+                    .logo{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+
+                    .site-name{
                         display: none;
                     }
+                }
 
-                    header .content{
-                        display: grid;
-                        grid-template-columns: repeat(2, 1fr);
-                        max-width: 1200px;
-                        margin: auto;
-                    }
+                .logo img{
+                    height: 60px;
+                }
 
-                    header .content #logo-link{
-                        justify-content: flex-start;
-                        margin-left: 21px;
-                    }
+                .mobile-menu{
+                    position: absolute;
+                    top: 24px;
+                    left: 15px;
+                }
 
-                    #search-form{
-                        text-align: right;
+                @media(min-width: 600px){
+                    .mobile-menu{
+                        display: none;
                     }
+                }
 
-                    #search-input{
-                        width: 210px;
-                    }
+                .mobile-menu details summary{
+                    color: white;
+                    list-style: none;
+                    outline: 1px solid white;
+                    padding: 12px;
+                    cursor: pointer;
+                }
 
-                    #logo-link .site-name{
-                        display: block;
-                    }
+                .mobile-menu > summary::marker, /* Latest Chrome, Edge, Firefox */ 
+                .mobile-menu > summary::-webkit-details-marker /* Safari */ {
+                    display: none;
+                }
+
+                .mobile-menu details ul{
+                    list-style: none;
+                    position: absolute;
+                    top: 45px;
+                }
+
+                .mobile-menu details ul li a{
+                    color: black;
+                    display: block;
+                    outline: 1px solid #eee;
+                    text-decoration: none;
+                    padding: 12px 6px;
+                    width: 120px;
+                    background-color: white;
+                }
+
+                .language-selector{
+                    position: absolute;
+                    top: 30px;
+                    right: 15px;
+                }
+
+                .language-selector details summary{
+                    list-style: none;
+                    cursor: pointer;
+                }
+
+                .language-selector details summary img{
+                    height: 30px;
+                }
+
+                .language-selector details ul{
+                    list-style: none;
+                    position: absolute;
+                    top: 30px;
+                    right: 0;
+                }
+
+                .language-selector details ul li a{
+                    color: black;
+                    display: block;
+                    outline: 1px solid #eee;
+                    text-decoration: none;
+                    padding: 12px 6px;
+                    width: 120px;
+                    background-color: white;
                 }
                 `
 
