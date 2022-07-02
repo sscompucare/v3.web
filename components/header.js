@@ -187,8 +187,8 @@ export default function Header({categories}){
 
                 .language-selector{
                     position: absolute;
-                    top: 30px;
-                    right: 15px;
+                    top: 24px;
+                    right: 30px;
                 }
 
                 .language-selector details summary{
@@ -197,7 +197,7 @@ export default function Header({categories}){
                 }
 
                 .language-selector details summary img{
-                    height: 30px;
+                    height: 42px;
                 }
 
                 .language-selector details ul{
