@@ -196,6 +196,11 @@ export default function Header({categories}){
                     cursor: pointer;
                 }
 
+                .language-selector > summary::marker, /* Latest Chrome, Edge, Firefox */ 
+                .language-selector > summary::-webkit-details-marker /* Safari */ {
+                    display: none;
+                }
+
                 .language-selector details summary img{
                     height: 42px;
                 }
@@ -203,7 +208,7 @@ export default function Header({categories}){
                 .language-selector details ul{
                     list-style: none;
                     position: absolute;
-                    top: 30px;
+                    top: 42px;
                     right: 0;
                 }
 

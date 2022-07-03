@@ -10,6 +10,30 @@ export default function Footer(){
             "en": "Languages",
             "el": "Γλώσσες"
         },
+        "support": {
+            "en": "Support",
+            "el": "Στήριξη"
+        },
+        "hereToHelp": {
+            "en": "Slow computer? Broken screen on your tablet? For any problems we're here to help! Just drop us a message here:",
+            "el": "Αργός υπολογιστής; Σπασμένη οθόνη στο τάμπλετ; Για οτιδήποτε πρόβλημα, είμαστε εδώ να βοηθήσουμε! Στείλτε μας ένα μήνυμα εδώ:"
+        },
+        "yourName": {
+            "en": "Your name",
+            "el": "Το όνομα σας"
+        },
+        "yourEmail": {
+            "en": "Your email",
+            "el": "Το email σας"
+        },
+        "yourMessage": {
+            "en": "Your message",
+            "el": "Το μήνυμα σας"
+        },
+        "send": {
+            "en": "Send",
+            "el": "Αποστολή"
+        },
         "designeddeveloped": {
             "en": "Website designed and developed by",
             "el": "Σχεδιασμός και ανάπτυξη από"
@@ -38,12 +62,30 @@ export default function Footer(){
             </div>
 
             <div className="links">
-                <section>
-                    <h2>{strings.languages[lang]}</h2>
-                    <ul>
-                        <li><Link href="/en"><a>English</a></Link></li>
-                        <li><Link href="/el"><a>Ελληνικά</a></Link></li>
-                    </ul>
+
+                <section id="contact-form">
+                    <h2>{strings.support[lang]}</h2>
+
+                    <form action="https://formsubmit.co/info@sscompucare.com" method="POST">
+                        <div class="description">{strings.hereToHelp[lang]}</div>
+                        <div className="contact-field">
+                            <label htmlFor="contact-form-name">{strings.yourName[lang]}</label>
+                            <input type="text" name="name" id="contact-form-name" required />
+                        </div>
+
+                        <div className="contact-field">
+                            <label htmlFor="contact-form-email">{strings.yourEmail[lang]}</label>
+                            <input type="email" name="email" id="contact-form-email" required />
+                        </div>
+
+                        <div className="contact-field">
+                            <label htmlFor="contact-form-message">{strings.yourMessage[lang]}</label>
+                            <textarea name="message" id="contact-form-message" cols="30" rows="10" ></textarea>
+                        </div>
+                        <div className="contact-field">
+                            <button type="submit">{strings.send[lang]}</button>
+                        </div>
+                    </form>
                 </section>
 
                 <section>
@@ -51,7 +93,7 @@ export default function Footer(){
                     <ul>
                         <li><a href="tel:0035799664102">{strings.call[lang]} 99664102</a></li>
                         <li><a href="sms:0035799664102">{strings.text[lang]} 99664102</a></li>
-                        <li><a href="info@sscompucare.com">E-mail</a></li>
+                        <li><a href="mailto:info@sscompucare.com">E-mail</a></li>
                         <li><a href="https://fb.me/sscompucare">Facebook</a></li>
                         
                     </ul>
@@ -97,6 +139,37 @@ export default function Footer(){
                     display: flex;
                     justify-content: space-around;
                 }
+            }
+
+            #contact-form{
+                max-width: 420px;
+            }
+
+            #contact-form .description{
+                margin-top: 15px;
+                line-height: 1.5;
+            }
+
+            #contact-form form label,
+            #contact-form form input,
+            #contact-form form textarea{
+                display: block;
+                margin-top: 6px;
+            }
+
+            #contact-form .contact-field{
+                margin-top: 21px;
+            }
+
+            #contact-form form input,
+            #contact-form form textarea{
+                width: calc(100% - 12px);
+                padding: 6px;
+                font-size: 15px;
+            }
+
+            #contact-form button{
+                padding: 6px;
             }
             `
             }
