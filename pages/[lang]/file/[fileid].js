@@ -125,7 +125,6 @@ export async function getStaticProps({params}){
 
     
     let file = files.find((file) => file.id === params.fileid)
-    file.category = categories.find((category) => category.slug === file.category)
 
     let strings = {
         "orderFromPricelist": {
