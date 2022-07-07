@@ -25,7 +25,7 @@ export default function File({categories, file, strings}) {
                 <div className="description">{strings.orderSectionDescription[lang]}</div>
                 <ul>
                     <li><a href="tel:0035799664102">{strings.call[lang]} 99664102</a></li>
-                    <li><a href="tel:0035799664102">{strings.text[lang]} 99664102</a></li>
+                    <li><a href="sms:0035799664102">{strings.text[lang]} 99664102</a></li>
                     <li><a href={`mailto:info@sscompucare.com?subject=Order for ${file.title}`}>{strings.email[lang]}</a></li>
                     <li><a href="https://m.me/sscompucare">Facebook Messenger</a></li>
                 </ul>
