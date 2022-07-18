@@ -36,7 +36,7 @@ export default function File({categories, file, strings}) {
                 title={file.title} 
                 src={`https://savvasstephanides.github.io/bucket/sscompucare/${file.filename}`}
                 width="100%"
-                height="600px">
+                height="calc(100vh - 60px)">
 
             </iframe>
         </main>
