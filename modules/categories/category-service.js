@@ -2,7 +2,7 @@ const axios = require("axios")
 const config = require("../../config.json")
 
 export default function CategoryService() {
-    const token = config.token
+    const token = process.env.API_TOKEN
     
     return {
         getAllCategories
