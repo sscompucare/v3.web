@@ -87,8 +87,9 @@ export default function File({categories, file, strings}) {
 
             .file-frame{
                 width: 100%;
-                height: 500px;
+                height: calc(100vh - 60px);
                 margin-top: 60px;
+                
             }
 
             section.order-section{
