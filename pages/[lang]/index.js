@@ -67,11 +67,10 @@ export default function Home({categories, files}) {
 
         section#hero{
           height: 420px;
-          background: url('/gadgets-icon.png');
+          background: url('/hero-img.png');
           background-size: 420px;
           background-repeat: no-repeat;
           background-position: bottom center;
-          background-color: white;
         }
 
         section#hero h1{
