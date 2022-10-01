@@ -34,6 +34,21 @@ export default function Search({categories, files}){
         }, this)
       })
 
+      const strings = {
+        searchResultsFor: {
+            en: "Search results for",
+            el: "Αποτελέσματα αναζήτησης για"
+        },
+        result: {
+            en: "result",
+            el: "αποτέλεσμα"
+        },
+        results: {
+            en: "results",
+            el: "αποτελέσματα"
+        }
+      }
+
 
     useEffect(() => {
         let params = new URLSearchParams(window.location.search)
@@ -43,24 +58,22 @@ export default function Search({categories, files}){
         let results = searchIndex.search(query)
             .map(r => files.find(f => f.id === r.ref))
 
-            console.log(results);
-
         setSearchResults(results)
     }, [])
 
     return (
         <Layout categories={categories}>
             <Head>
-                <title>Search results for '{query}'</title>
+                <title>{strings.searchResultsFor[lang]} '{query}'</title>
             </Head>
 
             <main>
-                <h1>Search results for '{query}'</h1>
+                <h1>{strings.searchResultsFor[lang]} '{query}'</h1>
 
                 <div style={{
                     marginTop: "30px",
                     fontStyle: "italic"
-                }}>{searchResults.length} {searchResults.length === 1 ? "result" : "results"}</div>
+                }}>{searchResults.length} {searchResults.length === 1 ? strings.result[lang] : strings.results[lang]}</div>
 
                 <ul className="search-results">
                     {searchResults.map((result) => (
