@@ -19,10 +19,17 @@ export default function Search({categories, files}){
     
     var searchIndex = lunr(function () {
         this.field('title')
-        this.field('category')
+        this.field('categoryName')
         this.ref('id')
       
-        files.forEach(function (doc) {
+        files.map((file) => {
+            return {
+                id: file.id,
+                title: file.title,
+                categoryName: file.category.name.en
+            }
+        })
+        .forEach(function (doc) {
           this.add(doc)
         }, this)
       })
@@ -35,6 +42,8 @@ export default function Search({categories, files}){
 
         let results = searchIndex.search(query)
             .map(r => files.find(f => f.id === r.ref))
+
+            console.log(results);
 
         setSearchResults(results)
     }, [])

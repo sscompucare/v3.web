@@ -1,6 +1,7 @@
 import Footer from './footer'
 import Header from './header'
 import Navigation from './navigation'
+import SearchForm from './search-form'
 
 export default function Layout({children, categories}){    
 
@@ -8,6 +9,7 @@ export default function Layout({children, categories}){
         <div id="app">
             <Header categories={categories}/>
             <Navigation categories={categories}/>
+            <SearchForm />
             {children}
             <Footer />
 
@@ -25,6 +27,16 @@ export default function Layout({children, categories}){
 
             main{
                 // padding-top: 150px;
+            }
+        
+            .visually-hidden {
+                clip: rect(0 0 0 0);
+                clip-path: inset(50%);
+                height: 1px;
+                overflow: hidden;
+                position: absolute;
+                white-space: nowrap;
+                width: 1px;
             }
             `
             }

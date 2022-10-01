@@ -58,6 +58,7 @@ export default function Header({categories}){
                         </ul>
                     </details>
                 </div>
+                
             </div>
 
             <style jsx>{
