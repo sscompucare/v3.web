@@ -59,38 +59,6 @@ export default function Header({categories}){
                     </details>
                 </div>
             </div>
-            {/* <div className="content">
-                <details id="mobile-menu">
-                    <summary>{strings.categories[lang]}</summary>
-                    <ul>
-                    {
-                    categories.slice(0,4).map((category) => (
-                        <li key={category.slug}>
-                            <Link href={`/${lang}/category/${category.slug}`}>
-                                <a>
-                                {category.name[lang]}
-                                </a>
-                            </Link>
-                        </li>
-                    ))
-                    }
-                    <li>
-                        <Link href={`/${lang}/categories`}>
-                            <a>{strings.more[lang]}</a>
-                        </Link>
-                    </li>
-                    </ul>
-                </details>
-                <Link href={`/${lang}`}>
-                    <a id="logo-link">
-                        <img src="/compucare-logo.png" alt="" />
-                        <div className="site-name">S.S. Compucare</div>
-                    </a>
-                </Link>
-                <form method="get" action={`/${lang}/search`} id="search-form">
-                    <input name="query" placeholder="Search" id="search-input"/>
-                </form>
-            </div> */}
 
             <style jsx>{
                 `

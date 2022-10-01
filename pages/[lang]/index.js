@@ -5,6 +5,7 @@ import FileList from '../../components/file-list'
 import CategoryService from '../../modules/categories/category-service'
 import FileService from '../../modules/files/file-service'
 import Link from 'next/link'
+import {useEffect} from 'react'
 
 const config = require("../../config.json")
 
@@ -19,14 +20,20 @@ export default function Home({categories, files}) {
     }
   }
 
+  useEffect(() => {
+    localStorage.setItem("compucare-lang", lang)
+}, [lang])
+
   return (
     <Layout categories={categories}>
+      
       <Head>
         <title>S.S. Compucare</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>
+        
         <section id="hero">
           <h1>{strings.bestOffers[lang]}</h1>
         </section>
