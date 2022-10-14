@@ -3,11 +3,18 @@ import { useRouter } from 'next/router'
 export default function SearchForm(){
     const router = useRouter()
     const {lang} = router.query
+
+    const strings = {
+        searchForAGadget: {
+            en: "Search for a gadget",
+            el: "Αναζήτηση συσκευής"
+        }
+    }
     
     return(<div className="search-form">
     <form method="get" action={`/${lang}/search`}>
             <label className="visually-hidden" htmlFor="search-text-input">Search query</label>
-            <input type="text" name="query" id="search-text-input" placeholder="Search for a gadget"/>
+            <input type="text" name="query" id="search-text-input" placeholder={strings.searchForAGadget[lang]}/>
     </form>
     <style jsx>{
         `
