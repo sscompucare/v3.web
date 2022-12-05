@@ -15,8 +15,8 @@ export default function Footer(){
             "el": "Στήριξη"
         },
         "hereToHelp": {
-            "en": "Slow computer? Broken screen on your tablet? For any problems we're here to help! Just drop us a message here:",
-            "el": "Αργός υπολογιστής; Σπασμένη οθόνη στο τάμπλετ; Για οτιδήποτε πρόβλημα, είμαστε εδώ να βοηθήσουμε! Στείλτε μας ένα μήνυμα εδώ:"
+            "en": "Slow computer? Printer out of order? For any problems we're here to help! We offer repairs and network configurations. Just leave a message here:",
+            "el": "Αργός υπολογιστής; Χαλασμένος εκτυπωτής; Για οτιδήποτε πρόβλημα, είμαστε εδώ να βοηθήσουμε! Προσφέρουμε επισκευές και διαμορφώσεις δικτύου. Στείλτε μας ένα μήνυμα εδώ:"
         },
         "yourName": {
             "en": "Your name",
