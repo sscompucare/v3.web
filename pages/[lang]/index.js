@@ -10,6 +10,9 @@ import {useEffect} from 'react'
 const config = require("../../config.json")
 
 export default function Home({categories, files}) {
+  console.log(categories)
+  console.log(files)
+
   const router = useRouter()
   const {lang} = router.query
 
@@ -43,7 +46,7 @@ export default function Home({categories, files}) {
 
               let categoryFiles = files
                   .sort((a,b) => new Date(b.createdTime) - new Date(a.createdTime))
-                  .filter((file) => file.category.slug === category.slug)
+                  .filter((file) => file.category.includes(category.slug))
                   .slice(0, 3)
                 
                 return categoryFiles.length > 0 && 
