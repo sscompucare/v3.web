@@ -26,7 +26,6 @@ export default function Search({categories, files}){
             return {
                 id: file.id,
                 title: file.title,
-                categoryName: file.category.name.en,
                 categoryName: file.categories.map((category) => category.name.en).join(",")
             }
         })
