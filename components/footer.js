@@ -42,6 +42,10 @@ export default function Footer(){
             "en": "Contact",
             "el": "Επικοινωνία"
         },
+        "location": {
+            en: "Location",
+            el: "Τοποθεσία"
+        },
         "call": {
             "en": "Call",
             "el": "Τηλέφωνο:"
@@ -91,6 +95,7 @@ export default function Footer(){
                 <section>
                     <h2>{strings.contact[lang]}</h2>
                     <ul>
+                        <li><a href="https://goo.gl/maps/P333VkePEcP9kgus7">{strings.location[lang]} (Google Maps)</a></li>
                         <li><a href="tel:0035799664102">{strings.call[lang]} 99664102</a></li>
                         <li><a href="sms:0035799664102">{strings.text[lang]} 99664102</a></li>
                         <li><a href="mailto:info@sscompucare.com">E-mail</a></li>
