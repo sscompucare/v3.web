@@ -15,7 +15,7 @@ export default function File({categories, file, strings}) {
             <link rel="icon" href="/favicon.ico" />
             <meta property="og:type"               content="article" />
             <meta property="og:title"              content={file.title} />
-            <meta property="og:image"              content={"https://sscompucare-cards.netlify.app/${file.id}.png"} />
+            <meta property="og:image"              content={"https://sscompucare-cards.netlify.app/" + file.id + ".png"} />
         </Head>
         <main>
             <div className="head">
