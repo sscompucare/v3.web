@@ -76,7 +76,7 @@ export default function FileList({files, language}){
           .file-list .single-file a:hover,
           .file-list .single-file a:focus{
             text-decoration: underline;
-            border: 3px solid #091353;
+            border: 1px solid #091353;
           }
         `
     }</style>
