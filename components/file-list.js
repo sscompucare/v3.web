@@ -45,9 +45,9 @@ export default function FileList({files, language}){
             padding: 21px;
             background-color: #fff;
             border-radius: 6px;
-            box-shadow: 0 0 30px #ccc;
+            box-shadow: 0 0 30px #eee;
             text-decoration: none;
-            border: 3px solid #EEE;
+            border: 1px solid #eee;
   
           }
   

@@ -22,7 +22,7 @@ export default function Layout({children, categories}){
             }
 
             body{
-                background-color: #EEE;
+                background-color: #fff;
             }
 
             main{
