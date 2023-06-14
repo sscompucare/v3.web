@@ -91,13 +91,15 @@ export default function File({categories, file, strings}) {
             .file-frame{
                 width: 100%;
                 height: calc(100vh - 60px);
-                margin-top: 60px;
+                margin-top: 30px;
                 
             }
 
             section.order-section{
                 margin-top: 30px;
-                border: 3px solid #ddd;
+                border: 1px solid #eee;
+                border-radius: 6px;
+                box-shadow: 0 0 15px #eee;
                 background-color: white;
                 padding: 15px;
             }
