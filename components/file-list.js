@@ -75,7 +75,6 @@ export default function FileList({files, language}){
   
           .file-list .single-file a:hover,
           .file-list .single-file a:focus{
-            text-decoration: underline;
             transform: scale(1.03);
           }
         `
