@@ -48,7 +48,7 @@ export default function FileList({files, language}){
             box-shadow: 0 0 30px #eee;
             text-decoration: none;
             border: 1px solid #eee;
-  
+            transition: transform ease 0.3s;
           }
   
           .file-list .single-file .thumbnail{
@@ -76,7 +76,7 @@ export default function FileList({files, language}){
           .file-list .single-file a:hover,
           .file-list .single-file a:focus{
             text-decoration: underline;
-            border: 1px solid #091353;
+            transform: scale(1.03);
           }
         `
     }</style>
