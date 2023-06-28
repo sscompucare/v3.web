@@ -50,8 +50,12 @@ export default function Home({categories, files}) {
                   .slice(0, 3)
                 
                 return categoryFiles.length > 0 && 
-                <div style={{"paddingTop": "30px"}} key={category.slug}>
-                  <h2 className="category-name"><Link href={`/${lang}/category/${category.slug}`}><a>{category.name[lang]}</a></Link></h2>
+                <div style={{"paddingTop": "15px"}} key={category.slug}>
+                  <h2 className="category-name">
+                    <Link href={`/${lang}/category/${category.slug}`}>
+                      <a>{category.name[lang]}</a>
+                    </Link>
+                  </h2>
                   <FileList files={categoryFiles} language={lang}/>
                 </div>
                 
@@ -75,17 +79,24 @@ export default function Home({categories, files}) {
           margin-top: 60px;
         }
 
+        h2.category-name a{
+          text-decoration: none;
+          color: black;
+          font-size: 30px;
+        }
+
+        h2.category-name a:hover{
+          text-decoration: underline;
+        }
+
         section#hero{
-          height: 420px;
-          background: url('/hero-img.png');
           background-size: 210px;
           background-repeat: no-repeat;
           background-position: bottom center;
         }
 
         section#hero h1{
-          text-align: center;
-          padding: 45px; 15px 0 15px;
+          padding-top: 45px;
           font-size: 48px;
         }
         `

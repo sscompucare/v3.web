@@ -62,7 +62,7 @@ export default function Footer(){
             </div>
 
             <div className="creator">
-                {strings.designeddeveloped[lang]} <a href="https://savvas.me">Savvas Stephanides</a>
+                {strings.designeddeveloped[lang]} <a href="https://savvas.me/links">Savvas Stephanides</a>
             </div>
 
             <div className="links">
