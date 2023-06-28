@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import Footer from './footer'
 import Header from './header'
 import Navigation from './navigation'
@@ -7,6 +8,11 @@ export default function Layout({children, categories}){
 
     return(
         <div id="app">
+            <Head>
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
+            </Head>
             <Header categories={categories}/>
             <Navigation categories={categories}/>
             <SearchForm />
@@ -18,7 +24,7 @@ export default function Layout({children, categories}){
             *{
                 margin: 0;
                 padding: 0;
-                font-family: sans-serif;
+                font-family: 'Poppins', sans-serif;
             }
 
             body{

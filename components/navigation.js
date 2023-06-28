@@ -78,7 +78,6 @@ export default function Navigation({categories}){
                     display: block;
                     text-decoration: none;
                     color: white;
-                    font-family: sans-serif;
                     font-size: 18px;
                 }
 

@@ -75,7 +75,6 @@ export default function Home({categories, files}) {
         }
 
         h2.category-name{
-          font-family: sans-serif;
           margin-top: 60px;
         }
 

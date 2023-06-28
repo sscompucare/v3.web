@@ -65,7 +65,6 @@ export default function FileList({files, language}){
           .file-list .single-file .file-title{
             font-size: 21px;
             color: black;
-            font-family: sans-serif;
             font-weight: bold;
             height: 60px;
             line-height: 1.5;
