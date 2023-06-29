@@ -56,18 +56,7 @@ export default function File({categories, file, strings}) {
                 margin-top: 30px;
             }
 
-            @media (min-width: 700px){
-                main{
-                    margin: auto;
-                }
-                main .head{
-                    display: flex;
-                }
-
-                main .head h1{
-                    margin-left: 30px;
-                }
-            }
+            
 
             main .head .thumbnail{
                 border: 1px solid #ddd;
@@ -82,6 +71,25 @@ export default function File({categories, file, strings}) {
                 background-size: contain!important;
                 background-origin: content-box!important;
 
+                display: none;
+
+            }
+
+            @media (min-width: 700px){
+                main{
+                    margin: auto;
+                }
+                main .head{
+                    display: flex;
+                }
+
+                main .head h1{
+                    margin-left: 30px;
+                }
+
+                main .head .thumbnail{
+                    display: block;
+                }
             }
 
             main .head h1{
@@ -111,10 +119,34 @@ export default function File({categories, file, strings}) {
             section.order-section ul{
                 list-style: none;
                 margin-top: 15px;
+                display: flex;
+                flex-direction: column;
             }
 
-            section.order-section ul li{
+            section.order-section ul li a{
+                display: block;
                 margin-top: 6px;
+                border: 1px solid #eee;
+                border-radius: 6px;
+                box-shadow: 0 0 15px #eee;
+                color: black;
+                text-decoration: none;
+                padding: 12px;
+            }
+
+            section.order-section ul li a:hover,
+            section.order-section ul li a:focus{
+                background-color: #eee;
+            }
+
+            @media(min-width: 720px){
+                section.order-section ul{
+                    flex-direction: row;
+                }
+
+                section.order-section ul li a{
+                    margin-right: 6px;
+                }
             }
             `
         }</style>
