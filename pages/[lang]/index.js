@@ -10,8 +10,6 @@ import {useEffect} from 'react'
 const config = require("../../config.json")
 
 export default function Home({categories, files}) {
-  console.log(categories)
-  console.log(files)
 
   const router = useRouter()
   const {lang} = router.query
