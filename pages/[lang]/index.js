@@ -26,7 +26,7 @@ export default function Home({categories, files}) {
 }, [lang])
 
   return (
-    <Layout categories={categories}>
+    <Layout>
       
       <Head>
         <title>S.S. Compucare</title>
@@ -94,7 +94,7 @@ export default function Home({categories, files}) {
 
         section#hero h1{
           padding-top: 45px;
-          font-size: 48px;
+          font-size: clamp(24px, 4vw, 45px);
         }
         `
       }</style>

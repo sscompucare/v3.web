@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
-export default function Header({categories}){
+export default function Header({searchFormIsVisible, setSearchFormIsVisible}){
     const router = useRouter()
     const {lang} = router.query
 
@@ -27,22 +27,10 @@ export default function Header({categories}){
                         </a>
                     </Link>
                 </div>
-                <div className="mobile-menu">
-                    <details closed>
-                        <summary>
-                            Devices
-                        </summary>
-                        <ul>
-                            {
-                                categories.map((category) => (
-                                    <li>
-                                        <Link href={`/${lang}/category/${category.slug}`}><a>{category.name[lang]}</a></Link>
-                                    </li>
-                                ))
-                            }
-                            
-                        </ul>
-                    </details>
+                <div className="search-button">
+                    <button onClick={() => setSearchFormIsVisible(searchFormIsVisible ? false:true)} aria-expanded={searchFormIsVisible ? "true": "false"}>  
+                        <img src="/search.png" alt/>
+                    </button>
                 </div>
                 <div className="language-selector">
                     <details closed>
@@ -64,7 +52,7 @@ export default function Header({categories}){
             <style jsx>{
                 `
                 header{
-                    background-color: #091353;
+                    background-color: #fafafa;
                 }
 
                 header .content{
@@ -84,7 +72,7 @@ export default function Header({categories}){
                 }
 
                 .logo a .site-name{
-                    color: white;
+                    color: black;
                     
                     font-weight: bold;
                     margin-left: 15px;
@@ -172,6 +160,8 @@ export default function Header({categories}){
 
                 .language-selector details summary img{
                     height: 42px;
+                    background-color: #091353;
+                    border-radius: 6px;
                 }
 
                 .language-selector details ul{
@@ -179,16 +169,34 @@ export default function Header({categories}){
                     position: absolute;
                     top: 42px;
                     right: 0;
+                    border: 2px solid black;
+
                 }
 
                 .language-selector details ul li a{
                     color: black;
                     display: block;
-                    outline: 1px solid #eee;
                     text-decoration: none;
                     padding: 12px 6px;
                     width: 120px;
                     background-color: white;
+                    border: 2px solid #eee;
+                }
+
+                .search-button button{
+                    height: 42px;
+                    width: 42px;
+                    position: absolute;
+                    top: 24px;
+                    right: 90px;
+                    background-color: #091353;
+                    border-radius: 6px;
+                    border: 0;
+                    cursor: pointer;
+                }
+
+                .search-button button img{
+                    height: 42px;
                 }
                 `
 

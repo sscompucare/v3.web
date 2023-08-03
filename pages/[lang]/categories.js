@@ -9,7 +9,7 @@ export default function Categories({categories}){
     const router = useRouter()
     const {lang} = router.query
     return (
-        <Layout categories={categories}>
+        <Layout>
             <main>
                 <h1>All categories</h1>
                 <ul>
@@ -55,19 +55,6 @@ export default function Categories({categories}){
         </Layout>
     )
 }
-
-export async function getStaticProps(){
-
-    let categoryService = new CategoryService()
-  
-    let categories = await categoryService.getAllCategories()
-  
-    return {
-      props: {
-        categories
-      }
-    }
-  }
   
   export async function getStaticPaths() {
     const languages = config.languages

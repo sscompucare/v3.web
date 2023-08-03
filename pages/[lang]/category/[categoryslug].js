@@ -19,7 +19,7 @@ export default function Category({category, categories, files}) {
     }
     
     return (
-        <Layout categories={categories}>
+        <Layout>
             <Head>
                 <title>{category.name[lang]} - S.S. Compucare</title>
                 <link rel="icon" href="/favicon.ico" />
@@ -93,8 +93,6 @@ export async function getStaticPaths() {
     
     const categoryService = new CategoryService()
     let categories = await categoryService.getAllCategories()
-
-
     
     let paths = []
     languages.forEach((language) => {

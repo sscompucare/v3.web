@@ -9,7 +9,7 @@ export default function File({categories, file, strings}) {
     const router = useRouter()
     const {lang} = router.query
 
-    return <Layout categories={categories}>
+    return <Layout>
         <Head>
             <title>{file.title} - S.S. Compucare</title>
             <link rel="icon" href="/favicon.ico" />
@@ -155,10 +155,8 @@ export default function File({categories, file, strings}) {
 
 export async function getStaticProps({params}){
 
-    let categoryService = new CategoryService()
     let fileService = new FileService()
   
-    let categories = await categoryService.getAllCategories()
     let files = await fileService.getAllFiles()
 
     
@@ -189,7 +187,6 @@ export async function getStaticProps({params}){
 
     return {
       props: {
-        categories,
         file,
         strings
       }

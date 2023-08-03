@@ -3,8 +3,10 @@ import Footer from './footer'
 import Header from './header'
 import Navigation from './navigation'
 import SearchForm from './search-form'
+import {useState} from 'react'
 
-export default function Layout({children, categories}){    
+export default function Layout({children}){    
+    const [searchFormIsVisible, setSearchFormIsVisible] = useState(false)
 
     return(
         <div id="app">
@@ -13,9 +15,9 @@ export default function Layout({children, categories}){
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
             <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
             </Head>
-            <Header categories={categories}/>
-            <Navigation categories={categories}/>
-            <SearchForm />
+            <Header searchFormIsVisible={searchFormIsVisible} setSearchFormIsVisible={setSearchFormIsVisible}/>
+            {/* <Navigation categories={categories}/> */}
+            <SearchForm isVisible={searchFormIsVisible}/>
             {children}
             <Footer />
 

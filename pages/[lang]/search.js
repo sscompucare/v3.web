@@ -62,7 +62,7 @@ export default function Search({categories, files}){
     }, [])
 
     return (
-        <Layout categories={categories}>
+        <Layout>
             <Head>
                 <title>{strings.searchResultsFor[lang]} '{query}'</title>
             </Head>
@@ -142,15 +142,12 @@ export default function Search({categories, files}){
 
 export async function getStaticProps(){
 
-    let categoryService = new CategoryService()
     let fileService = new FileService()
   
-    let categories = await categoryService.getAllCategories()
     let files = await fileService.getAllFiles()
   
     return {
         props: {
-            categories,
             files
         }
     }
