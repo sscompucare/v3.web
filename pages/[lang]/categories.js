@@ -55,6 +55,19 @@ export default function Categories({categories}){
         </Layout>
     )
 }
+
+export async function getStaticProps(){
+
+    let categoryService = new CategoryService()
+  
+    let categories = await categoryService.getAllCategories()
+  
+    return {
+      props: {
+        categories
+      }
+    }
+  }
   
   export async function getStaticPaths() {
     const languages = config.languages
