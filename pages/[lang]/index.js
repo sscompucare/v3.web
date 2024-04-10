@@ -47,7 +47,7 @@ export default function Home({categories, files}) {
                 return <li>
                   <Link href={`/${lang}/category/${category.slug}`}>
                     <a>
-                      <img className="thumbnail" src={`http://localhost:3004/category-${category.slug}.jpg`} alt=""/>
+                      <img className="thumbnail" src={`https://sscompucare-assets.netlify.app/category-${category.slug}.jpg`} alt=""/>
                       <div className="category-name">{category.name[lang]}</div>
                     </a>
                   </Link>
