@@ -39,6 +39,37 @@ export default function Home({categories, files}) {
           <h1>{strings.bestOffers[lang]}</h1>
         </section>
 
+        <div id="categories-wrapper">
+        <section id="categories">
+          <ul>
+            {
+              categories.map((category) => {
+                return <li>
+                  <Link href={`/${lang}/category/${category.slug}`}>
+                    <a>
+                      <img className="thumbnail" src={`http://localhost:3004/category-${category.slug}.jpg`} alt=""/>
+                      <div className="category-name">{category.name[lang]}</div>
+                    </a>
+                  </Link>
+                  
+                </li>
+              })
+            }
+          </ul>
+        </section>
+        <section id="categories-controls">
+          <button onClick={() => {
+            let categoriesElement = document.querySelector("#categories")
+            categoriesElement.scrollLeft -= 120
+          }}>⬅️</button>
+          <button onClick={() => {
+            let categoriesElement = document.querySelector("#categories")
+            categoriesElement.scrollLeft += 120
+          }}>➡️</button>
+        </section>
+        </div>
+        
+
         {
             categories.map((category) => {
 
@@ -51,7 +82,9 @@ export default function Home({categories, files}) {
                 <div style={{"paddingTop": "15px"}} key={category.slug}>
                   <h2 className="category-name">
                     <Link href={`/${lang}/category/${category.slug}`}>
-                      <a>{category.name[lang]}</a>
+                      <a>
+                        <div>{category.name[lang]}</div>
+                      </a>
                     </Link>
                   </h2>
                   <FileList files={categoryFiles} language={lang}/>
@@ -96,6 +129,72 @@ export default function Home({categories, files}) {
           padding-top: 45px;
           font-size: clamp(24px, 4vw, 45px);
         }
+
+        section#categories{
+          overflow: auto;
+          margin-top: 30px;
+          padding: 15px;
+        }
+
+        section#categories ul{
+          display: flex;
+          list-style: none;
+          gap: 15px;
+        }
+
+        section#categories ul li a{
+          display: block;
+          position: relative;
+          border: 2px solid #ddd;
+          padding: 15px;
+          border-radius: 15px;
+          height: 210px;
+          flex-shrink: 0;
+          width: 200px;
+          text-decoration: none;
+          color: black;
+          transition: transform ease 0.3s;
+        }
+
+        section#categories ul li a:hover{
+          transform: scale(1.03);
+        }
+
+        
+
+        section#categories ul li a img.thumbnail{
+          display: block;
+          position: absolute;
+          left: calc(50% - 75px);
+          top: calc(50% - 75px - 15px);
+          height: 150px;
+          border-radius: 100%;
+          border: 1px solid #eee;
+        }
+
+        section#categories ul li a .category-name{
+          position: absolute;
+          bottom: 15px;
+          left: 15px;
+        }
+
+        section#categories-controls{
+          visibility: hidden;
+          text-align: center;
+        }
+
+        section#categories-controls button{
+          font-size: 30px;
+          background-color: transparent;
+          border: 0;
+          padding: 9px;
+          cursor: pointer;
+        }
+
+        #categories-wrapper:hover #categories-controls{
+          visibility: visible;
+        }
+
         `
       }</style>
     </Layout>
