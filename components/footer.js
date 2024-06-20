@@ -58,7 +58,7 @@ export default function Footer(){
     return (<footer>
         <div className="content">
             <div className="copyright">
-                2023 &copy; S.S. Compucare 
+                2024 &copy; S.S. Compucare 
             </div>
 
             <div className="creator">
