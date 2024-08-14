@@ -16,6 +16,12 @@ export default function File({categories, file, strings}) {
             <meta property="og:type"               content="article" />
             <meta property="og:title"              content={file.title} />
             <meta property="og:image"              content={"https://sscompucare-cards.netlify.app/" + file.id + ".png"} />
+
+            <meta name="description" content={`Buy ${file.title} (${file.categories.map(category => category.name[lang].toLowerCase()).join(", ")}) at the best offers in Cyprus from S.S. Compucare`} />
+            <meta name="keywords" content={`${file.title.split(" ").join(",")},${file.categories.map(category => category.name[lang].toLowerCase()).join(",")},sscompucare,cyprus,athienou,buy,technology,shop,it,best,offers`} />
+            <meta http-equiv="Content-Language" content={lang}/>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+            <link rel="canonical" href={`https://www.sscompucare.com/${lang}/file/${file.id}`} />
         </Head>
         <main>
             <div className="head">

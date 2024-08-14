@@ -9,7 +9,7 @@ const config = require("../../../config.json")
 
 export default function Category({category, categories, files}) {
     const router = useRouter()
-    const {lang} = router.query
+    const {lang} = router.query    
 
     const strings = {
         "noOffers": {
@@ -23,6 +23,12 @@ export default function Category({category, categories, files}) {
             <Head>
                 <title>{category.name[lang]} - S.S. Compucare</title>
                 <link rel="icon" href="/favicon.ico" />
+
+                <meta name="description" content={`Buy ${category.name[lang]} at the best offers in Cyprus from S.S. Compucare`} />
+                <meta name="keywords" content={`${category.name[lang]},${files.map(file => file.title).join(",").replaceAll(" ", ",")},sscompucare,cyprus,athienou,buy,technology,shop,it,best,offers`} />
+                <meta http-equiv="Content-Language" content={lang}/>
+                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+                <link rel="canonical" href={`https://www.sscompucare.com/${lang}/category/${category.slug}`} />
             </Head>
             <main>
                 <div className="head">

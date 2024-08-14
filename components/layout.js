@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Footer from './footer'
 import Header from './header'
-import Navigation from './navigation'
 import SearchForm from './search-form'
 import {useState} from 'react'
 
@@ -16,7 +15,6 @@ export default function Layout({children}){
             <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
             </Head>
             <Header searchFormIsVisible={searchFormIsVisible} setSearchFormIsVisible={setSearchFormIsVisible}/>
-            {/* <Navigation categories={categories}/> */}
             <SearchForm isVisible={searchFormIsVisible}/>
             {children}
             <Footer />

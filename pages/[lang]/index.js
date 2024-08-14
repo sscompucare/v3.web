@@ -31,6 +31,12 @@ export default function Home({categories, files}) {
       <Head>
         <title>S.S. Compucare</title>
         <link rel="icon" href="/favicon.ico" />
+
+        <meta name="description" content={`Buy ${categories.map(category => category.name[lang].toLowerCase()).join(", ")} at the best offers in Cyprus from S.S. Compucare`} />
+        <meta name="keywords" content={`${categories.map(category => category.name[lang].toLowerCase()).join(", ")},sscompucare,cyprus,athienou,buy,technology,shop,it,offers`} />
+        <meta http-equiv="Content-Language" content={lang}/>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <link rel="canonical" href={`https://www.sscompucare.com/${lang}`} />
       </Head>
 
       <main>
